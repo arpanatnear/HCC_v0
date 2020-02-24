@@ -54,7 +54,7 @@ def get_one_day_sp_dataframe(date_1, country, spark = spark):
 
 #### create time index as a new col:
 # df should comtain col "eventTs"
-# index_hrs_day copuld be varied as num of hrs 
+# index_hrs_day could be varied as num of hrs 
 def add_index_eventTs(date_1, df, index_hrs_day):
     ## date to ts : midnight :  timegm doing as default
     date_1_ts = calendar.timegm(date_1.timetuple())
@@ -74,7 +74,7 @@ def add_index_eventTs(date_1, df, index_hrs_day):
 
 
 def summ_ifa_index_day(df):
-    # df should contain cols:  "ifa", "index","eventTs", "geoHash7" : add check : print statement
+    # df should contain cols:  "ifa", "index","eventTs", "geoHash7" : add check : print statement for mismatch
     ## summarisation on index level for an ifa:
     # note : count of eventTs as count of pings (assuming ifa + eventTs as key for staypoint output data)
     df_grp_ind = df.groupBy("ifa", "index").agg(F.count("eventTs").alias('pings_index') , F.countDistinct("geoHash7").alias('gh7s_index') )
