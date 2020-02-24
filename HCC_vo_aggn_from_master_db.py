@@ -126,7 +126,7 @@ save_cnt_dates_cnt_ifa = True # defualt true
 BASE_PATH = "s3://near-datascience/arpan.shrivastava/attr_panel/v1_tests/final/"
 # from where to read:
 INPUT_DATA_PATH  = BASE_PATH +"%s/"%(country)  +"%s/"%(index_hrs_day) + "daily_counts/"
-# from where to write:
+# where to write:
 OUTPUT_DATA_PATH  = BASE_PATH +"%s/"%(country)  +"%s/"%(index_hrs_day) + "aggn/" +"%s,"%(end_date) +"%s,"%(num_of_days ) +"%s,"%(c_index_min_for_day) +"%s/"%(c_dates_min )
 
 
@@ -141,6 +141,8 @@ apply_filters_c_index_c_dates(daily_data_agg, c_index_min_for_day,  c_dates_min,
 # daily_data_agg = apply_filters_c_index_c_dates(daily_data_agg, c_index_min_for_day,  c_dates_min, OUTPUT_DATA_PATH ) 
 # return df for further analysis
 print("applied filters and saved the result data to s3 ")
+
+
 
 
 
